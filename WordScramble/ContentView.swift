@@ -92,13 +92,12 @@ struct ContentView: View {
             if let pos = tempWord.firstIndex(of: letter) {
                 tempWord.remove(at: pos)
             } else {
-                return true
+                return false
             }
         }
         
-        return false
+        return true
     }
-    
     func isReal(word: String) -> Bool {
         let checker = UITextChecker()
         let range = NSRange(location: 0, length: word.utf16.count)
